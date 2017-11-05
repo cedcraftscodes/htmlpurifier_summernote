@@ -1,14 +1,11 @@
 <?php 
-require_once 'hp/library/HTMLPurifier.auto.php';
+require_once 'htmlpurifier/library/HTMLPurifier.auto.php';
 
 $config = HTMLPurifier_Config::createDefault();
 $config->set('HTML.SafeIframe', true);
 $config->set('URI.AllowedSchemes', array('data' => true, 'http' => true));
 $config->set('URI.SafeIframeRegexp', '%^(https?:)?(\/\/www\.youtube(?:-nocookie)?\.com\/embed\/|\/\/player\.vimeo\.com\/)%');
 $purifier = new HTMLPurifier($config);
-
-
-
 
 include 'connect.php';
 
